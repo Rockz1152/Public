@@ -1,0 +1,8 @@
+# Make sure not to block these domains or Curseforge ads will not load
+
+127.0.0.1		tracking.overwolf.com
+127.0.0.1		analyticsnew.overwolf.com
+127.0.0.1		widget.freshworks.com
+127.0.0.1		mrkt.forgecdn.net
+127.0.0.1		content.overwolf.com
+127.0.0.1		apps-errors.overwolf.com
