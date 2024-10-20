@@ -1,0 +1,30 @@
+# More examples at: https://github.com/yt-dlp/yt-dlp#format-selection-examples
+
+# Download Video
+yt-dlp.exe <URL>
+
+# Download time range or chapters
+# can be passed multiple times, examples:
+# --download-sections "*10:15-inf"
+# --download-sections "intro"
+
+# Download Audio Only
+# yt-dlp will automatically choose the best quality
+yt-dlp.exe -x --ffmpeg-location ffmpeg\bin --audio-format mp3 <URL>
+
+# Best audio quality without conversion
+yt-dlp -x -f "ba" --ffmpeg-location ffmpeg\bin <URL>
+
+# Audio quality
+# Try using the regular download command above, if you have quality issues try one below
+# Fixed bitrate (Preferred over variable)
+yt-dlp.exe --audio-quality 128K -x --ffmpeg-location ffmpeg\bin --audio-format mp3 <URL>
+# Variable bitrate (0=Best, 10=Worst, 5=Default)
+yt-dlp.exe --audio-quality 0 -x --ffmpeg-location ffmpeg\bin --audio-format mp3 <URL>
+
+# Download and merge the best video-only format and the best audio-only format,
+# or download the best combined format if video-only format is not available
+# and convert to mp4
+yt-dlp -f "bv+ba/b" --ffmpeg-location ffmpeg\bin --recode mp4 -i <URL>
+# With subtitles
+yt-dlp -f "bv+ba/b" --ffmpeg-location ffmpeg\bin --write-sub --write-auto-sub --sub-lang "en.*" --convert-subs srt --recode mp4 -i -k <URL>
