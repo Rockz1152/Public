@@ -3,7 +3,7 @@
 ## Installation
 Ideal hardware setup
 
-- 1 or 2 boot drives
+- 1 boot drives
 - 1 or more storage drives
 
 Download install media
