@@ -102,7 +102,7 @@ Navigate to: **Datacenter > Storage > Add > Proxmox Backup Server**
 - **Server**: IP of the server
 - **Username/Password (UN/PW)**: User credentials. For the username, format it as `user@pam` e.g. `root@pam`
 - **Datastore**: Name of the datastore on the backup server
-- **Name**: Name of the Namespace on the backup server, you only need to fill this in if you are backing up multiple Proxmox Servers
+- **Namespace**: Name of the Namespace on the backup server, you only need to fill this in if you are backing up multiple Proxmox Servers
 - **Fingerprint**: On the backup server, on the dashboard page click at the top `Show Fingerprint`
 - Click `Add`
 
