@@ -78,7 +78,7 @@ Select `Content`
 
 - Click `+ Add Namespace`
 - For "Namespace Name", enter a unique ID for your first Proxmox Server you are backing up
-- Make sure "Parent Namespace" is `Root` unless you are explicitly trying to nest your new Namespce
+- Make sure "Parent Namespace" is `Root` unless you are explicitly trying to nest your new Namespace
 - Repeat for each Proxmox Server you are backing up
 
 ### Configure Prune & GC Jobs
