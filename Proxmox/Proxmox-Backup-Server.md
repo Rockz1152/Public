@@ -95,9 +95,6 @@ Select `Options`
 - Edit `Verify New Snapshots`
 - Enable `Verify new backups immediately after completion`
 
-<!--Select `Verify Jobs` and click `Add`
-- The default settings are adequate, click `Add` to complete-->
-
 ## Add Backup Server to PVE
 Navigate to: **Datacenter > Storage > Add > Proxmox Backup Server**
 
