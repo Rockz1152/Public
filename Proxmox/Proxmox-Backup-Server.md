@@ -70,7 +70,7 @@ ZFS
 Navigate to: **Datastore > Your Datastore**
 
 ### Configure Namespaces
-Note: Namespaces allow you to backup multiple Proxmox Servers to a single Backup Server without the need to require clustering. Separate Namespaces allow Containers and VMs of the same ID from different server to reside on the Backup Server without conflict. Simply Create a separate Namespace for each of your servers and specify it when adding the Backup Server to your Proxmox Server.
+Note: Namespaces allow you to backup multiple Proxmox Servers to a single Backup Server without the need to require clustering. Separate Namespaces allow Containers and VMs of the same ID from different server to reside on the Backup Server without conflict. Simply create a separate Namespace for each of your servers and specify it when adding the Backup Server to your Proxmox Server.
 
 Note: Namespaces are not required if you are backing up a single Proxmox Server
 
