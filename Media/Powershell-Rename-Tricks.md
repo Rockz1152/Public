@@ -7,6 +7,7 @@ Changing the File Extension of all .jpeg files to .jpg
 ```
 dir *.jpeg | rename-item -newname { $_.name  -replace ".jpeg",".jpg" }
 ```
+Adding a language to a subtitle file
 ```
 dir *.srt | rename-item -newname { $_.name  -replace ".srt",".eng.srt" }
 ```
