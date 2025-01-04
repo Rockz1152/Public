@@ -1,4 +1,30 @@
 # ShutUp10++ Registry Map
+This map will include only the `Recommended Settings` from the app as well as the following
+
+- Current User
+  - Windows Explorer > Disable ads in Windows Explorer/OneDrive
+  - Search > Disable extensions of Windows search with Bing
+  - Taskbar
+    - Disable People icon in the taskbar
+    - Disable search box in the taskbar
+    - Disable "Meet now" in the taskbar
+    - Disable news and interests in the taskbar
+- Local Machine
+  - Windows AI
+    - Disable Cocreator in Microsoft Paint
+    - Disable AI-powered image fill in Microsoft Paint
+  - Windows Explorer > Disable OneDrive access to network before login
+  - Microsoft Defender and Microsoft SpyNet
+    - Disable Microsoft SpyNet membership
+    - Disable submitting data samples to Microsoft
+    - Disable reporting of malware infection information
+  - Taskbar
+    - Disable "Meet now" in the taskbar
+    - Disable new and interests in the taskbar
+  - Miscellaneous
+    - Disable Key Management Service Online Activation
+    - Disable automatic download and update of map data
+    - Disable unsolicited network traffic on the offline maps settings page
 
 ## Out-of-box Privacy Settings
 ```
