@@ -3,7 +3,7 @@ This map will include only the `Recommended Settings` from the app as well as th
 
 - Current User
   - Windows Explorer > Disable ads in Windows Explorer/OneDrive
-  - Search > Disable extensions of Windows search with Bing
+  - Search > Disable extension of Windows search with Bing
   - Taskbar
     - Disable People icon in the taskbar
     - Disable search box in the taskbar
@@ -213,3 +213,47 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 # Disable Windows Copilot+ Recall
 reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f
 ```
+
+Windows Explorer
+```
+# Disable occasionally showing app suggestions in Start menu
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SystemPaneSuggestionsEnabled" /t REG_DWORD /d 0 /f
+
+# Disable ads in Windows Explorer/OneDrive
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSyncProviderNotifications" /t REG_DWORD /d 0 /f
+```
+
+Lock Screen
+```
+# Disable Windows Spotlight
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "RotatingLockScreenEnabled" /t REG_DWORD /d 0 /f
+
+# Disable fun facts, tips, tricks and more on your lock screen
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "RotatingLockScreenOverlayEnabled" /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338387Enabled" /t REG_DWORD /d 0 /f
+
+# Disable notifications on lock screen
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings" /v "NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK" /t REG_DWORD /d 0 /f
+```
+
+Mobile Devices
+```
+# Disable access to mobile devices
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Mobility" /v "CrossDeviceEnabled" /t REG_DWORD /d 0 /f
+
+# Disable Phone Link app
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Mobility" /v "PhoneLinkEnabled" /t REG_DWORD /d 0 /f
+
+# Disable showing suggestions for using mobile devices with Windows
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Mobility" /v "OptedIn" /t REG_DWORD /d 0 /f
+```
+
+Search
+```
+# Disable search with AI in search box
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsDynamicSearchBoxEnabled" /t REG_DWORD /d 0 /f
+
+# Disable extension of Windows search with Bing
+reg add "HKCU\Software\Policies\Microsoft\Windows\Explorer" /v "DisableSearchBoxSuggestions" /t REG_DWORD /d 1 /f
+```
+
