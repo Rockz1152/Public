@@ -101,3 +101,48 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 # Disable app access to diagnostics information
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics" /v "Value" /t REG_SZ /d "Deny" /f
 ```
+
+Microsoft Edge (new version based on Chromium)
+```
+# Disable tracking in the web
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "ConfigureDoNotTrack" /t REG_DWORD /d 1 /f
+
+# Disable check for saved payment methods by sites
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "PaymentMethodQueryEnabled" /t REG_DWORD /d 0 /f
+
+# Disable personalizing advertising, search, news and other services
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "PersonalizationReportingEnabled" /t REG_DWORD /d 0 /f
+
+# Disable automatic complete of web addresses in address bar
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "AddressBarMicrosoftSearchInBingProviderEnabled" /t REG_DWORD /d 0 /f
+
+# Disable user feedback in toolbar
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "UserFeedbackAllowed" /t REG_DWORD /d 0 /f
+
+# Disable storing and autocompleting of credit card data on websites
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "AutofillCreditCardEnabled" /t REG_DWORD /d 0 /f
+
+# Disable form suggestions
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "AutofillAddressEnabled" /t REG_DWORD /d 0 /f
+
+# Disable suggestions from local providers
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "LocalProvidersEnabled" /t REG_DWORD /d 0 /f
+
+# Disable search and website suggestions
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "SearchSuggestEnabled" /t REG_DWORD /d 0 /f
+
+# Disable shopping assistant in Microsoft edge
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "EdgeShoppingAssistantEnabled" /t REG_DWORD /d 0 /f
+
+# Disable Edge bar
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "WebWidgetAllowed" /t REG_DWORD /d 0 /f
+
+# Disable Sidebar in Microsoft Edge
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "HubsSidebarEnabled" /t REG_DWORD /d 0 /f
+
+# Disable the Microsoft Account Sign-In button
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "BrowserSignin" /t REG_DWORD /d 0 /f
+
+# Disable Enhanced Spell Checking
+reg add "HKCU\Software\Policies\Microsoft\Edge" /v "MicrosoftEditorProofingEnabled" /t REG_DWORD /d 0 /f
+```
