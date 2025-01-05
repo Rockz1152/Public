@@ -30,8 +30,37 @@ This map will include only the `Recommended Settings` from the app as well as th
 - [Out-of-box Privacy Settings](#out-of-box-privacy-settings)
 - [Current User Map](#current-user-map)
   - Privacy
+  - Activity History and Clipboard
+  - App Privacy
+  - Microsoft Edge (new version based on Chromium)
+  - Microsoft Edge (legacy version)
+  - Synchronization of Windows Settings
+  - Cortana (Personal Assistant)
+  - Windows AI
+  - User Behavior
+  - Windows Explorer
+  - Lock Screen
+  - Mobile Devices
+  - Search
+  - Taskbar
+  - Miscellaneous
 - [Local Machine Map](#local-machine-map)
   - Privacy
+  - Activity History and Clipboard
+  - App Privacy
+  - Security
+  - Microsoft Edge (new version based on Chromium)
+  - Microsoft Edge (legacy version)
+  - Cortana (Personal Assistant)
+  - Windows AI
+  - Location Services
+  - User Behavior
+  - Windows Update
+  - Windows Explorer
+  - Microsoft Defender and Microsoft SpyNet
+  - Mobile Devices
+  - Taskbar
+  - Miscellaneous
 
 ----
 
