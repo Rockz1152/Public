@@ -354,3 +354,18 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "AllowClipboardHist
 # Disable the transfer of the clipboard to other devices via the cloud
 reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "AllowCrossDeviceClipboard" /t REG_DWORD /d 0 /f
 ```
+
+### Security
+```
+# Disable password reveal button
+reg add "HKLM\Software\Policies\Microsoft\Windows\CredUI" /v "DisablePasswordReveal" /t REG_DWORD /d 1 /f
+
+# Disable user steps recorder
+reg add "HKLM\Software\Policies\Microsoft\Windows\AppCompat" /v "DisableUAR" /t REG_DWORD /d 1 /f
+
+# Disable telemetry
+## The "dmwappushservice" service is required to sync with Microsoft Intune
+reg add "HKLM\System\CurrentControlSet\Services\DiagTrack" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKLM\System\CurrentControlSet\Services\dmwappushservice" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener" /v "Start" /t REG_DWORD /d 0 /f
+```
