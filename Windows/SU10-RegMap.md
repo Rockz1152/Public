@@ -367,6 +367,18 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "AllowClipboardHist
 reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "AllowCrossDeviceClipboard" /t REG_DWORD /d 0 /f
 ```
 
+### App Privacy
+```
+# Disable app access to user account information
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation" /v "Value" /t REG_SZ /d "Deny" /f
+
+# Disable app access to diagnostics information
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics" /v "Value" /t REG_SZ /d "Deny" /f
+
+# Disable app access to device location
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" /v "Value" /t REG_SZ /d "Deny" /f
+```
+
 ### Security
 ```
 # Disable password reveal button
