@@ -552,7 +552,7 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\DataCollection" /v "AllowTelem
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "AllowTelemetry" /t REG_DWORD /d 0 /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\AppCompat" /v "AITEnable" /t REG_DWORD /d 0 /f
 
-# Disable the use of diagnostic data from customizing user experiences for whole machine
+# Disable diagnostic data from customizing user experiences for whole machine
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExperiencesWithDiagnosticDataEnabled" /t REG_DWORD /d 0 /f
 
 # Disable diagnostic log collection
