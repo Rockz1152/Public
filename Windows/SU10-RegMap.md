@@ -453,3 +453,24 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\Windows Search" /v "AllowCorta
 # Disable the search highlights in the taskbar
 reg add "HKLM\Software\Policies\Microsoft\Windows\Windows Search" /v "EnableDynamicContentInWSB" /t REG_DWORD /d 0 /f
 ```
+
+### Windows AI
+```
+# Disable the Windows Copilot
+reg add "HKLM\Software\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /t REG_DWORD /d 1 /f
+
+# Disable the provision of recall functionality to all users
+reg add "HKLM\Software\Policies\Microsoft\Windows\WindowsAI" /v "AllowRecallEnablement" /t REG_DWORD /d 0 /f
+
+# Disable the Image Creator in Microsoft Paint
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Paint" /v "DisableImageCreator" /t REG_DWORD /d 1 /f
+
+# Disable Windows Copilot+ Recall
+reg add "HKLM\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f
+
+# Disable Cocreator in Microsoft Paint
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint" /v "DisableCocreator" /t REG_DWORD /d 1 /f
+
+# Disable AI-powered image fill in Microsoft Paint
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint" /v "DisableGenerativeFill" /t REG_DWORD /d 1 /f
+```
