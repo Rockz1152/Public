@@ -26,6 +26,15 @@ This map will include only the `Recommended Settings` from the app as well as th
     - Disable automatic download and update of map data
     - Disable unsolicited network traffic on the offline maps settings page
 
+## Index
+- [Out-of-box Privacy Settings](#out-of-box-privacy-settings)
+- [Current User Map](#current-user-map)
+  - Privacy
+- [Local Machine Map](#local-machine-map)
+  - Privacy
+
+----
+
 ## Out-of-box Privacy Settings
 
 ```
@@ -64,7 +73,7 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExp
 
 ## Current User Map
 
-Privacy
+### Privacy
 ```
 # Disable and reset Advertising ID and info
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v "Enabled" /t REG_DWORD /d 0 /f
@@ -90,7 +99,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d 0 /f
 ```
 
-App Privacy
+### App Privacy
 ```
 # Disable app access to user account information
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation" /v "Value" /t REG_SZ /d "Deny" /f
@@ -102,7 +111,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics" /v "Value" /t REG_SZ /d "Deny" /f
 ```
 
-Microsoft Edge (new version based on Chromium)
+### Microsoft Edge (new version based on Chromium)
 ```
 # Disable tracking in the web
 reg add "HKCU\Software\Policies\Microsoft\Edge" /v "ConfigureDoNotTrack" /t REG_DWORD /d 1 /f
@@ -147,7 +156,7 @@ reg add "HKCU\Software\Policies\Microsoft\Edge" /v "BrowserSignin" /t REG_DWORD 
 reg add "HKCU\Software\Policies\Microsoft\Edge" /v "MicrosoftEditorProofingEnabled" /t REG_DWORD /d 0 /f
 ```
 
-Microsoft Edge (legacy version)
+### Microsoft Edge (legacy version)
 ```
 # Disable tracking in the web
 reg add "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Main" /v "DoNotTrack" /t REG_DWORD /d 1 /f
@@ -166,7 +175,7 @@ New-Item -Path "HKCU:\Software\Classes\Local Settings\Software\Microsoft\Windows
 Set-ItemProperty -Path "HKCU:\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\ServiceUI\ShowSearchHistory" -Name "(Default)" -Type DWORD -Value "0"
 ```
 
-Synchronization of Windows Settings
+### Synchronization of Windows Settings
 ```
 # Disable synchronization of all settings
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync" /v "SyncPolicy" /t REG_DWORD /d 5 /f
@@ -190,7 +199,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Acces
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows" /v "Enabled" /t REG_DWORD /d 0 /f
 ```
 
-Cortana (Personal Assistant)
+### Cortana (Personal Assistant)
 ```
 # Disable and reset Cortana
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Windows Search" /v "CortanaConsent" /t REG_DWORD /d 0 /f
@@ -202,7 +211,7 @@ reg add "HKCU\Software\Microsoft\InputPersonalization" /v "RestrictImplicitTextC
 reg add "HKCU\Software\Microsoft\InputPersonalization\TrainedDataStore" /v "HarvestContacts" /t REG_DWORD /d 0 /f
 ```
 
-Windows AI
+### Windows AI
 ```
 # Disable the Windows Copilot
 reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /t REG_DWORD /d 1 /f
@@ -214,7 +223,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f
 ```
 
-Windows Explorer
+### Windows Explorer
 ```
 # Disable occasionally showing app suggestions in Start menu
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SystemPaneSuggestionsEnabled" /t REG_DWORD /d 0 /f
@@ -223,7 +232,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSyncProviderNotifications" /t REG_DWORD /d 0 /f
 ```
 
-Lock Screen
+### Lock Screen
 ```
 # Disable Windows Spotlight
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "RotatingLockScreenEnabled" /t REG_DWORD /d 0 /f
@@ -236,7 +245,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings" /v "NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK" /t REG_DWORD /d 0 /f
 ```
 
-Mobile Devices
+### Mobile Devices
 ```
 # Disable access to mobile devices
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Mobility" /v "CrossDeviceEnabled" /t REG_DWORD /d 0 /f
@@ -248,7 +257,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Mobility" /v "PhoneLinkE
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Mobility" /v "OptedIn" /t REG_DWORD /d 0 /f
 ```
 
-Search
+### Search
 ```
 # Disable search with AI in search box
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsDynamicSearchBoxEnabled" /t REG_DWORD /d 0 /f
@@ -257,7 +266,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsDy
 reg add "HKCU\Software\Policies\Microsoft\Windows\Explorer" /v "DisableSearchBoxSuggestions" /t REG_DWORD /d 1 /f
 ```
 
-Taskbar
+### Taskbar
 ```
 # Disable People icon in the taskbar
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" /v "PeopleBand" /t REG_DWORD /d 0 /f
@@ -277,7 +286,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTas
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarDa" /t REG_DWORD /d 0 /f
 ```
 
-Miscellaneous
+### Miscellaneous
 ```
 # Disable feedback reminders
 reg add "HKCU\Software\Microsoft\Siuf\Rules" /v "NumberOfSIUFInPeriod" /t REG_DWORD /d 0 /f
@@ -298,7 +307,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcon
 
 ## Local Machine Map
 
-Privacy
+### Privacy
 ```
 # Disable sharing of handwriting data
 reg add "HKLM\Software\Policies\Microsoft\Windows\TabletPC" /v "PreventHandwritingDataSharing" /t REG_DWORD /d 1 /f
