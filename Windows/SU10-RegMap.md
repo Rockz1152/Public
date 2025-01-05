@@ -228,6 +228,12 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f
 ```
 
+### User Behavior
+```
+# Disable the use of diagnostic data for tailor-made user experience
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExperiencesWithDiagnosticDataEnabled" /t REG_DWORD /d 0 /f
+```
+
 ### Windows Explorer
 ```
 # Disable occasionally showing app suggestions in Start menu
