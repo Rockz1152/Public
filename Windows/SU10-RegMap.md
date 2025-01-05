@@ -505,3 +505,32 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\DataCollection" /v "LimitDiagn
 # Disable downloading of OneSettings configuration settings
 reg add "HKLM\Software\Policies\Microsoft\Windows\DataCollection" /v "DisableOneSettingsDownloads" /t REG_DWORD /d 1 /f
 ```
+
+### Windows Update
+```
+# Disable Windows Update via peer-to-peer
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" /v "DODownloadMode" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\DeliveryOptimization" /v "DODownloadMode" /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization" /v "SystemSettingsDownloadMode" /t REG_DWORD /d 0 /f
+
+# Disable updates to the speech recognition and speech synthesis modules
+reg add "HKLM\Software\Policies\Microsoft\Speech" /v "AllowSpeechModelUpdate" /t REG_DWORD /d 0 /f
+```
+
+### Windows Explorer
+```
+# Disable OneDrive access to network before login
+reg add "HKLM\SOFTWARE\Microsoft\OneDrive" /v "PreventNetworkTrafficPreUserSignIn" /t REG_DWORD /d 1 /f
+```
+
+### Microsoft Defender and Microsoft SpyNet
+```
+# Disable Microsoft SpyNet membership
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet" /v "SpyNetReporting" /t REG_DWORD /d 0 /f
+
+# Disable submitting data samples to Microsoft
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet" /v "SubmitSamplesConsent" /t REG_DWORD /d 2 /f
+
+# Disable reporting of malware infection information
+reg add "HKLM\SOFTWARE\Policies\Microsoft\MRT" /v "DontReportInfectionInformation" /t REG_DWORD /d 1 /f
+```
