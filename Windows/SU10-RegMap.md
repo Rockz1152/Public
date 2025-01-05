@@ -36,7 +36,6 @@ This map will include only the `Recommended Settings` from the app as well as th
 ----
 
 ## Out-of-box Privacy Settings
-
 ```
 # Current User
 
@@ -336,4 +335,22 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\Messaging" /v "AllowMessageSyn
 # Disable Windows Error Reporting
 reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting" /v "Disabled" /t REG_DWORD /d 1 /f
 Disable-WindowsErrorReporting
+```
+
+### Activity History and Clipboard
+```
+# Disable recordings of user activity
+reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "EnableActivityFeed" /t REG_DWORD /d 0 /f
+
+# Disable storing users' activity history
+reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "PublishUserActivities" /t REG_DWORD /d 0 /f
+
+# Disable the submission of user activities to Microsoft
+reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "UploadUserActivities" /t REG_DWORD /d 0 /f
+
+# Disable storage of clipboard history for whole machine
+reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "AllowClipboardHistory" /t REG_DWORD /d 0 /f
+
+# Disable the transfer of the clipboard to other devices via the cloud
+reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "AllowCrossDeviceClipboard" /t REG_DWORD /d 0 /f
 ```
