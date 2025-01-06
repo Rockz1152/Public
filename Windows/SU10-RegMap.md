@@ -2,7 +2,9 @@
 This map will include only the `Recommended Settings` from the app as well as the following
 
 - Current User
-  - Windows Explorer > Disable ads in Windows Explorer/OneDrive
+  - Windows Explorer
+    - Do not show recently opened items in Jump Lists on "Start" or the taskbar
+    - Disable ads in Windows Explorer/OneDrive
   - Search > Disable extension of Windows search with Bing
   - Taskbar
     - Disable People icon in the taskbar
@@ -270,6 +272,9 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExp
 ```
 # Disable occasionally showing app suggestions in Start menu
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SystemPaneSuggestionsEnabled" /t REG_DWORD /d 0 /f
+
+# Do not show recently opened items in Jump Lists on "Start" or the taskbar
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t REG_DWORD /d 0 /f
 
 # Disable ads in Windows Explorer/OneDrive
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSyncProviderNotifications" /t REG_DWORD /d 0 /f
