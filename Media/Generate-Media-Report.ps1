@@ -17,7 +17,7 @@ $showsPath = "Shows"
 
 # Define the output HTML file path
 #$outputHtmlPath = "E:\media_contents.html"
-$outputHtmlPath = "media_contents.html"
+$outputHtmlPath = "media_inventory.html"
 
 # Get the current date for the inventory header
 $currentDate = Get-Date -Format "yyyy-MM-dd"
