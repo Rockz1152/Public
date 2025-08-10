@@ -10,7 +10,7 @@ https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=6vfww
 These changes configure the following settings:
 - Disables the welcome screen to expediate program use
 - Disables automatic updates and sets the schedule to `Manual`
-- Filters out unnecessary software updates
+- Filters out unwanted software such as the 5.5 update for DCU and Dell's remote support assist tool.
 
 This Powershell code includes a check for Dell hardware just to be safe. Open a Windows Terminal as Admin to run.
 ```powershell
