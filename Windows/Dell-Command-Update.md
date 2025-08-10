@@ -1,5 +1,5 @@
 # Dell Command Update
-Dell Command update or DCU, is a Dell utility for Windows that detects and installs the latest BIOS, firmware, and driver updates for supported Dell systems.
+Dell Command Update or DCU, is a Dell utility for Windows that detects and installs the latest BIOS, firmware, and driver updates for supported Dell systems.
 
 ## Installation
 Starting with version 5.5 of Dell Command Update, unnecessary bloat is included in the installer. As such, it is recommended to only install version 5.4 from the link below.
