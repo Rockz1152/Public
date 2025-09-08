@@ -84,6 +84,9 @@ $htmlContent.AppendLine(@"
 $htmlContent.AppendLine("</head>") | Out-Null
 $htmlContent.AppendLine("<body>") | Out-Null
 
+# Return-to-top anchor
+$htmlContent.AppendLine("<a name='top'></a>") | Out-Null
+
 # Add Inventory Date at the top
 $htmlContent.AppendLine("<h1>Media Inventory</h1>") | Out-Null
 $htmlContent.AppendLine("<p><strong>Inventory Date:</strong> $currentDate</p>") | Out-Null
@@ -92,11 +95,15 @@ $htmlContent.AppendLine("<p><strong>Inventory Date:</strong> $currentDate</p>") 
 $moviesLetters = Get-JumpMenuLetters -folderPath $moviesPath
 $showsLetters  = Get-JumpMenuLetters -folderPath $showsPath
 
+# Count Movies and Shows
+$movieCount = $(Get-ChildItem -Path $moviesPath -Directory -Depth 1).count
+$showCount = $(Get-ChildItem -Path $showsPath -Directory -Depth 1).count
+
 $htmlContent.AppendLine("<div class='jump-menu'>") | Out-Null
 $htmlContent.AppendLine("<table style='text-align:left;'>") | Out-Null
 
 $htmlContent.AppendLine("<tr>") | Out-Null
-$htmlContent.AppendLine("<td style='vertical-align:top;'><strong>Movies:</strong>&nbsp;&nbsp;&nbsp;</td>") | Out-Null
+$htmlContent.AppendLine("<td style='vertical-align:top;'><strong>($movieCount) Movies:</strong>&nbsp;&nbsp;&nbsp;</td>") | Out-Null
 $htmlContent.AppendLine("<td>") | Out-Null
 foreach ($letter in $moviesLetters) {
     $htmlContent.AppendLine("<a href='#Movies_$letter' style='margin-right:8px;'>$letter</a>") | Out-Null
@@ -105,7 +112,7 @@ $htmlContent.AppendLine("</td>") | Out-Null
 $htmlContent.AppendLine("</tr>") | Out-Null
 
 $htmlContent.AppendLine("<tr>") | Out-Null
-$htmlContent.AppendLine("<td style='vertical-align:top;'><strong>Shows:</strong>&nbsp;&nbsp;&nbsp;</td>") | Out-Null
+$htmlContent.AppendLine("<td style='vertical-align:top;'><strong>($showCount) Shows:</strong>&nbsp;&nbsp;&nbsp;</td>") | Out-Null
 $htmlContent.AppendLine("<td>") | Out-Null
 foreach ($letter in $showsLetters) {
     $htmlContent.AppendLine("<a href='#Shows_$letter' style='margin-right:8px;'>$letter</a>") | Out-Null
@@ -163,6 +170,31 @@ List-FolderContents -folderPath $moviesPath -sectionTitle "Movies" -anchorPrefix
 
 # List the contents of the Shows directory (anchors will be present as defined above)
 List-FolderContents -folderPath $showsPath -sectionTitle "Shows" -anchorPrefix "Shows"
+
+# Add a "Return to Top" button (bottom-right corner)
+$htmlContent.AppendLine(@"
+<a href="#top" id="topBtn">&#8679;</a>
+<style>
+    #topBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+        text-decoration: none;
+        background-color: #444;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 6px; /* Small rounding for square edges */
+        box-shadow: 2px 2px 6px #000;
+        opacity: 0.6;              /* Semi-transparent */
+        transition: opacity 0.3s, background-color 0.3s;
+    }
+    #topBtn:hover {
+        background-color: #666;
+    }
+</style>
+"@) | Out-Null
+
 
 # Close the HTML document
 $htmlContent.AppendLine("</body>") | Out-Null
