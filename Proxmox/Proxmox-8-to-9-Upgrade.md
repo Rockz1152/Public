@@ -11,7 +11,7 @@ apt update && apt dist-upgrade -y
 ```
 pve8to9 --full
 ```
-  - Resolve any issues and run again
+- Resolve any issues and run again
   - For example: `apt remove systemd-boot`
   - Ignore: `WARN: a suitable kernel (proxmox-kernel-X.XX) is installed, but an unsuitable (6.X.XX-XX-pve) is booted, missing reboot?!`
 - Remove old no-nag and old no-subscription repos
