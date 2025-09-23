@@ -58,7 +58,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Proxmo
   - Deb822 sources detected: `Ok`
   - 'pve-enterprise' repository already exists: `disable`
   - 'pve-no-subscription' repository is currently ENABLED: `keep`
-  - AAdd (Disabled) 'pvetest' repository: `n`
+  - Add (Disabled) 'pvetest' repository: `n`
   - Disable subscription nag: `y`
   - Support Subscriptions: `Ok`
   - Disable high availability: `y`
