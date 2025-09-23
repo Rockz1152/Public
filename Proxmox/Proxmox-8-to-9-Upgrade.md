@@ -36,12 +36,14 @@ Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
 EOF
 ```
 - Upgrade the system
-  - `apt update`
-  - `apt dist-upgrade`
-    - `q` to close news
-    - `y` to install /etc/issue
-    - Restart services without asking? `Yes`
-    - `y` to install /etc/lvm/lvm.conf
+```
+apt update && apt dist-upgrade -y
+```
+- When prompted:
+  - `q` to close news
+  - `y` to install /etc/issue
+  - Restart services without asking? `Yes`
+  - `y` to install /etc/lvm/lvm.conf
 - Check Result & Reboot
   - Run: `pve8to9 --full`
   - Ignore: `WARN: a suitable kernel (proxmox-kernel-X.XX) is installed, but an unsuitable (6.X.XX-XX-pve) is booted, missing reboot?!`
