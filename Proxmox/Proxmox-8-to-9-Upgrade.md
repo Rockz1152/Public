@@ -2,13 +2,18 @@
 
 For more information see: https://pve.proxmox.com/wiki/Upgrade_from_8_to_9
 
+- Stop all VMS and CTs running on the host
 - Install all available updates
 ```
 apt update && apt dist-upgrade -y
 ```
-- Run `pve8to9 --full`
+- Run the upgrade compatibility checker
+```
+pve8to9 --full
+```
   - Resolve any issues and run again
   - For example: `apt remove systemd-boot`
+  - Ignore: `WARN: a suitable kernel (proxmox-kernel-X.XX) is installed, but an unsuitable (6.X.XX-XX-pve) is booted, missing reboot?!`
 - Remove old no-nag and old no-subscription repos
 ```
 rm -f /etc/apt/apt.conf.d/99-proxmox-no-nag-script
@@ -39,20 +44,29 @@ EOF
     - `y` to install /etc/lvm/lvm.conf
 - Check Result & Reboot
   - Run: `pve8to9 --full`
-  - Ignore: `WARN: a suitable kernel (proxmox-kernel-6.14) is installed, but an unsuitable (6.8.12-15-pve) is booted, missing reboot?!`
+  - Ignore: `WARN: a suitable kernel (proxmox-kernel-X.XX) is installed, but an unsuitable (6.X.XX-XX-pve) is booted, missing reboot?!`
   - `reboot` if no other issues found
 - Allow server to reboot and verify upgrade
-- Run the community script
+- Run the community post-install script
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
 ```
 - When prompted:
-  - Disable 'pve-enterprise' repository: `y`
-  - Keep 'pve-no-subscription' as-is: `keep`
-  - Add (Disabled) 'pvetest' repository: `n`
+  - Start the script with: `y`
+  - Deb822 sources detected: `Ok`
+  - 'pve-enterprise' repository already exists: `disable`
+  - 'pve-no-subscription' repository is currently ENABLED: `keep`
+  - AAdd (Disabled) 'pvetest' repository: `n`
   - Disable subscription nag: `y`
+  - Support Subscriptions: `Ok`
   - Disable high availability: `y`
+  - Disable Corosync for a Proxmox VE Cluster: `y`
   - Update Proxmox VE now: `y`
+  - Post-Install Reminder: `Ok`
   - Reboot Proxmox VE now: `y`
+- Run the community kernel cleanup script
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/kernel-clean.sh)"
+```
 
 Finished
