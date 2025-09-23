@@ -54,18 +54,18 @@ apt update && apt dist-upgrade -y
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
 ```
 - When prompted:
-  - Start the script with: `y`
+  - Start the script with: `yes`
   - Deb822 sources detected: `Ok`
   - 'pve-enterprise' repository already exists: `disable`
   - 'pve-no-subscription' repository is currently ENABLED: `keep`
-  - Add (Disabled) 'pvetest' repository: `n`
-  - Disable subscription nag: `y`
+  - Add (Disabled) 'pvetest' repository: `no`
+  - Disable subscription nag: `yes`
   - Support Subscriptions: `Ok`
-  - Disable high availability: `y`
-  - Disable Corosync for a Proxmox VE Cluster: `y`
-  - Update Proxmox VE now: `y`
+  - Disable high availability: `yes`
+  - Disable Corosync for a Proxmox VE Cluster: `yes`
+  - Update Proxmox VE now: `yes`
   - Post-Install Reminder: `Ok`
-  - Reboot Proxmox VE now: `y`
+  - Reboot Proxmox VE now: `yes`
 - Run the community kernel cleanup script
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/kernel-clean.sh)"
