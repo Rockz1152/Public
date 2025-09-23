@@ -8,7 +8,7 @@ apt update && apt dist-upgrade -y
 ```
 - Run `pve8to9 --full`
   - Resolve any issues and run again
-  - apt remove systemd-boot
+  - For example: `apt remove systemd-boot`
 - Remove old no-nag and old no-subscription repos
 ```
 rm -f /etc/apt/apt.conf.d/99-proxmox-no-nag-script
@@ -41,14 +41,18 @@ EOF
   - Run: `pve8to9 --full`
   - Ignore: `WARN: a suitable kernel (proxmox-kernel-6.14) is installed, but an unsuitable (6.8.12-15-pve) is booted, missing reboot?!`
   - `reboot` if no other issues found
+- Allow server to reboot and verify upgrade
 - Run the community script
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
 ```
+- When prompted:
   - Disable 'pve-enterprise' repository: `y`
-  - `Keep` 'pve-no-subscription' as-is
+  - Keep 'pve-no-subscription' as-is: `keep`
   - Add (Disabled) 'pvetest' repository: `n`
   - Disable subscription nag: `y`
   - Disable high availability: `y`
-  - Update Proxmox VE now: y
-  - Reboot Proxmox VE now: n
+  - Update Proxmox VE now: `y`
+  - Reboot Proxmox VE now: `y`
+
+Finished
