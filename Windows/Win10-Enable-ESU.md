@@ -5,8 +5,7 @@ _*This requires a personal Microsoft Account_
 
 - Enable Connected User Experiences and Telemetry (DiagTrack) service
 ```
-sc.exe config DiagTrack start= auto
-sc.exe start DiagTrack
+Set-Service -Name "DiagTrack" -StartupType Automatic; Start-Service -Name "DiagTrack"
 ```
 - Force ESU opt-in to appear in Windows Update
 ```
@@ -18,5 +17,9 @@ reg.exe add "HKLM\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\
 cmd /c ClipESUConsumer.exe -evaluateEligibility
 ```
 - Open Windows Update and you should be able to opt-in to ESU now
+- Disable the "DiagTrack" service after enrolling
+```
+Set-Service -Name "DiagTrack" -StartupType Disabled; Stop-Service -Name "DiagTrack"
+```
 
-Once enabled updates are valid until October 2026
+Once enrolled updates are valid until October 2026
