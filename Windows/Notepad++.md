@@ -1,12 +1,12 @@
 # Notepad++
-## Download
-- https://notepad-plus-plus.org/downloads/
-- [Ninite](https://ninite.com/)
-
 ## Installation
-- Leave all installation options on their default settings
-- You can optionally enable the desktop shortcut
-- Let the installation finish
+- Sources
+  - https://notepad-plus-plus.org/downloads/
+  - [Ninite](https://ninite.com/)
+  - Winget
+```
+winget install -e Notepad++ --accept-package-agreements --accept-source-agreements
+```
 - It's recommended to enable the "Show hidden file extensions" option in Windows File Explorer
 ```
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f; Stop-Process -ProcessName explorer
@@ -64,7 +64,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 ## Plugins
 - Plugins > Plugins Admin
 - Search for `DSpellCheck` and `ComparePlus`, check each and click Install
-- Click Yes to the popup and yes to the UAC popup
+- Click `Yes` to the popup and `Yes` to the UAC popup
 - Verify the plugins are installed by clicking Plugins at the top
   - You should now see ComparePlus and DSpellCheck
 - We need to install a language for DSpellCheck to work
