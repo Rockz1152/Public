@@ -45,7 +45,8 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 - New document
   - Under Format (Line ending), select `Unix (LF)`
 - Indentation
-  - Make sure Indent size is set to `4` and under "Indent using:" select `Space characters(s)`
+  - Make sure Indent size is set to `4` 
+  - Under "Indent using:" select `Space characters(s)`
 - Backup
   - Make sure both settings are enabled, `Remember current session for next launch` and `Enable session snapshot and periodic backup`
 - Auto-Completion
