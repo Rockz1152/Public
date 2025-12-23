@@ -65,10 +65,10 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 
 ## Plugins
 - Plugins > Plugins Admin
-- Search for `DSpellCheck` and `ComparePlus`, check each and click Install
+- Search for `DSpellCheck` and `ComparePlus`, check each and click `Install`
 - Click `Yes` to the popup and `Yes` to the UAC popup
 - Verify the plugins are installed by clicking Plugins at the top
-  - You should now see ComparePlus and DSpellCheck
+  - You should now see ComparePlus and DSpellCheck in the list
 - We need to install a language for DSpellCheck to work
   - Go to Plugins > DSpellCheck > Change Current Language > Download Languages
   - In the popup select `English (United States)` and then click `Install Selected`
