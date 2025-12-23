@@ -1,6 +1,7 @@
 # Windows
 
 - Dell-Command-Update.md > Setup information for Dell Command | Update
+- Notepad++.md > My optimal settings for Notepad++
 - SU10-RegMap.md > Map of Registry entries from ShutUp10++
 - Win-Inactive-Window-Color.reg > Sets a dark inactive Window color for Win10/Win11
 - Win10-Dark-Theme.reg > Sets Dark Theme and accent for Windows 10, use with script above
