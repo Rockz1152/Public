@@ -55,7 +55,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 - Cloud & Link
   - Under Clickable Link Settings, uncheck `Enable`
 - MISC.
-  - If you don't want to be prompted when there are updates available for Notepad++, uncheck `Enable Notepad++ auto-updater`
+  - If you don't want to be prompted when there are updates available for Notepad++, set "Auto-updater" to `Disable`
 
 ### Optional
 - View > Show Symbol
