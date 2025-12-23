@@ -50,8 +50,8 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 - Backup
   - Make sure both settings are enabled, `Remember current session for next launch` and `Enable session snapshot and periodic backup`
 - Auto-Completion
-  - Make sure Auto indent is checked
-  - Uncheck both `Enable auto-completion on each input` and `Function parameters hint on input`
+  - Uncheck `Enable auto-completion on each input`
+  - Uncheck `Function parameters hint on input`
 - Cloud & Link
   - Under Clickable Link Settings, uncheck `Enable`
 - MISC.
