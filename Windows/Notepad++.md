@@ -5,7 +5,7 @@
   - [Ninite](https://ninite.com/)
   - Winget
 ```
-winget install -e Notepad++ --accept-package-agreements --accept-source-agreements
+winget install -e Notepad++ --source winget --accept-package-agreements --accept-source-agreements
 ```
 - It's recommended to enable the "Show hidden file extensions" option in Windows File Explorer
 ```
