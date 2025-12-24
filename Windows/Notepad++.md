@@ -36,9 +36,9 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
   - Fold Margin Style
     - Select `Circle tree`
   - Change History
-    - If the green/orange colors in the margin are distracting, you can disable them here
-    - Uncheck `Show in the margin`
     - Uncheck `Show in the text`
+    - If the green/orange colors in the side margin are distracting you can disable them here
+      - Uncheck `Show in the margin`
   - Border Width
     - Check `No Edge`
   - Uncheck `Display bookmark`
