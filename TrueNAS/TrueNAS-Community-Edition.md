@@ -1,5 +1,7 @@
 # TrueNAS Community Edition
 
+TrueNAS is an open-source network-attached storage (NAS) operating system that lets you store, manage, and share data across a network.
+
 ## Drives
 High capacity spinning disks are recommended for storage pools for their relative low cost compared to SSDs. Obviously if SSDs become cheaper, dollar per GB, use them instead.
 
