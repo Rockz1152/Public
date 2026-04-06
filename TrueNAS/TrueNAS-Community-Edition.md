@@ -11,7 +11,7 @@ Use either of these sites to help find affordable drives
 - https://diskprices.com/
 
 > [!NOTE]
-> For mechanical disks, try to find drives that use CMR technology as opposed to SMR technology. Western Digital Reds or Seagate Iron Wolf drives are examples of recommended drives.
+> For mechanical disks, try to find drives that use CMR technology as opposed to SMR technology. Western Digital Red or Seagate Iron Wolf drives are examples of recommended drives.
 
 ## Installation
 - Download installation media from https://www.truenas.com/download/
@@ -99,7 +99,7 @@ If you want to secure your server against local access you can disable the text 
 - Console > Configure
 - Uncheck `Show Text Console without Password Prompt` and click `Save`
 
-To access it manually, you will can run the following command locally or over SSH
+To access it manually you can run the following command locally or over SSH
 ```
 sudo cli --menu
 ```
