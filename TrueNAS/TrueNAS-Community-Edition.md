@@ -10,7 +10,8 @@ Use either of these sites to help find affordable drives
 - https://pcpartpicker.com/
 - https://diskprices.com/
 
-Note: For mechanical disks, try to find drives that use CMR technology as opposed to SMR technology. Western Digital Reds or Seagate Iron Wolf drives are examples of recommended drives.
+> [!NOTE]
+> For mechanical disks, try to find drives that use CMR technology as opposed to SMR technology. Western Digital Reds or Seagate Iron Wolf drives are examples of recommended drives.
 
 ## Installation
 - Download installation media from https://www.truenas.com/download/
