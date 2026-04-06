@@ -31,7 +31,7 @@ Use either of these sites to help find affordable drives
 
 > [!NOTE]
 > This section is optional if you prefer to use the built-in administrator account `truenas_admin`.
-> If you want to use a custom username instead, proceed.
+> Proceed only if you want to create and use a custom username instead.
 
 Create a new user
 
