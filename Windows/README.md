@@ -10,6 +10,7 @@
 - Win11-Install-Patch-Hardware-Bypass.zip > Installer patch to simplify setup with a local user and bypass hardware requirements
 - Win11-Install-Patch-SysAdmin.zip > Installer patch to simplify setup and automatically create a local "SysAdmin" user
 - Win11-Install-Patch.zip > Installer patch to simplify setup with a local user
+- Win11-SecureBoot-2023-Update.md > Notes for updating SecureBoot to 2023 CA
 - WinInst-Cleaner.ps1 > Use to clean out C:\Windows\Installer folder when it gets too large
 
 For Windows and Office use: https://github.com/massgravel/Microsoft-Activation-Scripts
