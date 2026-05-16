@@ -50,7 +50,7 @@ foreach ($result in $results) {
 -->
 
 If updated certificates are not yet installed to the firmware, you can manually run the task to update them
-- Set the registry key to enalbe the updates
+- Set the registry key to enable the updates
 ```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot" -Name "AvailableUpdates" -Value 0x40
 ```
