@@ -3,7 +3,7 @@
 In June of 2026, Microsoft's first SecureBoot certificate signed in 2011 expired. Here are some commands to help ensure your system's certificates are updated.
 
 ### Check if SecureBoot is enabled
-```
+```powershell
 if (( Get-ItemPropertyValue -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot\State" -Name "UEFISecureBootEnabled" ) -eq "1") {
     Write-Host "SecureBoot is enabled" -ForegroundColor Green
 } else {
@@ -13,29 +13,59 @@ if (( Get-ItemPropertyValue -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Secure
 - If SecureBoot is not enabled, you will need to configure your system's firmware settings to enable it.
 
 ### Check if updated certificates are available
+```powershell
+# Read the Secure Boot databases once
+$dbText  = [System.Text.Encoding]::ASCII.GetString((Get-SecureBootUEFI db).Bytes)
+$kekText = [System.Text.Encoding]::ASCII.GetString((Get-SecureBootUEFI kek).Bytes)
+# Gather results
+$results = @(
+    [PSCustomObject]@{
+        Name      = 'Windows UEFI CA 2023'
+        Installed = $dbText -match 'Windows UEFI CA 2023'
+    }
+    [PSCustomObject]@{
+        Name      = 'Microsoft UEFI CA 2023'
+        Installed = $dbText -match 'Microsoft UEFI CA 2023'
+    }
+    [PSCustomObject]@{
+        Name      = 'Microsoft Corporation KEK 2K CA 2023'
+        Installed = $kekText -match 'Microsoft Corporation KEK 2K CA 2023'
+    }
+)
+# Output all results together
+foreach ($result in $results) {
+    if ($result.Installed) {
+        Write-Host "$($result.Name) installed" -ForegroundColor Green
+    }
+    else {
+        Write-Host "$($result.Name) Not installed" -ForegroundColor Yellow
+    }
+}
 ```
+
+<!-- Original manual commands
 [System.Text.Encoding]::ASCII.GetString((Get-SecureBootUEFI db).bytes) -match 'Windows UEFI CA 2023'
 [System.Text.Encoding]::ASCII.GetString((Get-SecureBootUEFI db).bytes) -match 'Microsoft UEFI CA 2023'
 [System.Text.Encoding]::ASCII.GetString((Get-SecureBootUEFI kek).bytes) -match 'Microsoft Corporation KEK 2K CA 2023'
-```
+-->
+
 If updated certificates are not yet installed to the firmware, you can manually run the task to update them
-- Set the registry key
-```
+- Set the registry key to enalbe the updates
+```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot" -Name "AvailableUpdates" -Value 0x40
 ```
 - Run the following scheduled task
-```
+```powershell
 Start-ScheduledTask -TaskName "\Microsoft\Windows\PI\Secure-Boot-Update"
 ```
 - Reboot the system twice
+- Recheck if the updated certificates are installed and then verify if the boot loader has been updated
 
 ### Verify the boot loader is updated
-```
+```powershell
 if (( Get-ItemPropertyValue -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot\Servicing" -Name "UEFICA2023Status" ) -eq "Updated") {
     Write-Host "Boot loader is updated" -ForegroundColor Green
 } else {
     Write-Host "Boot loader is Not updated" -ForegroundColor Yellow
 }
 ```
-
-
