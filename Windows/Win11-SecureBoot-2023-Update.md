@@ -59,13 +59,13 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot" -Name
 Start-ScheduledTask -TaskName "\Microsoft\Windows\PI\Secure-Boot-Update"
 ```
 - Reboot the system twice
-- Recheck if the updated certificates are installed and then verify if the boot loader has been updated
+- Recheck if the updated certificates are installed and then verify if the Boot Manager has been updated
 
-### Verify the boot loader is updated
+### Verify the Boot Manager is updated
 ```powershell
 if (( Get-ItemPropertyValue -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot\Servicing" -Name "UEFICA2023Status" ) -eq "Updated") {
-    Write-Host "Boot loader is updated" -ForegroundColor Green
+    Write-Host "Boot Manager is updated" -ForegroundColor Green
 } else {
-    Write-Host "Boot loader is Not updated" -ForegroundColor Yellow
+    Write-Host "Boot Manager is Not updated" -ForegroundColor Yellow
 }
 ```
