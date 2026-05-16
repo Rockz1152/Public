@@ -69,3 +69,14 @@ if (( Get-ItemPropertyValue -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Secure
     Write-Host "Boot Manager is Not updated" -ForegroundColor Yellow
 }
 ```
+
+### Related Event IDs
+Source: TPM-WMI
+- ID 1036 - Secure Boot Db update applied successfully
+- ID 1043 - Secure Boot KEK update applied successfully
+- ID 1044 - Secure Boot DB update to install Microsoft Option ROM UEFI CA 2023 certificate applied successfully
+- ID 1045 - Secure Boot DB update to install Microsoft UEFI CA 2023 certificate applied successfully
+- ID 1800 - A reboot is required before instaiing the Secure Boot update. Reason: Boot Manager (2023)
+- ID 1801 - Indicates the old certificate is still in use: "Secure Boot certificates have been updated but are not yet applied to the device firmware"
+- ID 1799 - Boot Manager signed with Windows UEFI CA 2023 was installed successfully
+- ID 1808 - This device has updated Secure Boot CA/keys
